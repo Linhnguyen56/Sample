@@ -1,0 +1,47 @@
+
+import java.util.Scanner;
+public class Sample
+{
+        public static void main(String[] args) {
+                Scanner sc=new Scanner(System.in);
+                
+                System.out.println("Welcome to the Stock Picker App!");
+            double amount=0;
+            System.out.println("Enter the total amount of money you are willing to invest");
+            amount=sc.nextDouble();
+            String ticker;
+            System.out.println("Enter the stock ticker");
+            ticker=sc.next();
+            if(ticker.length()>5){
+                System.out.println("Invalid Input . Try again");
+                System.out.println("Enter the stock ticker");
+                ticker=sc.next();
+            }
+            
+            double price=0;
+            System.out.println("Enter the price ");
+            price=sc.nextDouble();
+            if(price<0.01){
+                System.out.println("Invalid Input . Try again");
+                 System.out.println("Enter the price ");
+                
+                price=sc.nextDouble();
+            }
+            
+            double PEratio=0;
+            System.out.println("Enter the P/E Ratio");
+            PEratio=sc.nextDouble();
+           
+            System.out.println("Below are your results:");
+            System.out.println("Stock: " + ticker );
+            System.out.println("Price: " + price );
+             if(PEratio>60){
+                System.out.println("WARNING:This company may be overvalued");
+            }
+            System.out.println("P/E Ratio: " + PEratio );
+            int number=(int)(amount/price);
+            System.out.println("# of shares able to purchase: " + number  );
+            
+            
+        }
+}
